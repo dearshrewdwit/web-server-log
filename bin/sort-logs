@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/app'
+
+sort_command = SortCommand.new(*ARGV)
+
+begin
+  sort_command.validate!
+  file_path = sort_command.file_path
+  log = Log.new
+  log.sort(file_path: file_path)
+rescue WebServerLogError => error
+  puts error.message
+end
