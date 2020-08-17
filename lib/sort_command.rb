@@ -1,4 +1,5 @@
 class SortCommand
+  ACCEPTED_FILE_TYPES = %w(.log)
   attr_reader :file_path
 
   def initialize(file_path = nil, *args)
@@ -22,6 +23,6 @@ class SortCommand
 
   def validate_file_path
     raise FileNotFoundError unless File.exist?(file_path)
-    raise IncorrectFileTypeError unless file_path[-4..-1] == '.log'
+    raise IncorrectFileTypeError unless ACCEPTED_FILE_TYPES.include?(file_path[-4..-1])
   end
 end
