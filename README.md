@@ -2,16 +2,18 @@
 
 ## Quick Start
 
+
 1. `git clone` this repository and `cd` into it
 2. `bundle install` the dependencies
 3. run `bin/sort-logs webserver.log
-```
 
 ## Testing
 
 Run `bundle exec rspec` to run the test suite
 
-Rub `rubocop` to run the linter
+Run `rubocop` to run the linter
+
+After a test run,`open coverage/index.html` to see full test coverage report.
 
 ## Approach
 
