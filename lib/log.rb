@@ -6,7 +6,6 @@ class Log
 
   def initialize(page_visit_class: PageVisit)
     @page_visit_class = page_visit_class
-    @page_visits = []
   end
 
   def sort(file_path:, sorts: new_sorts)
@@ -25,7 +24,7 @@ class Log
 
   private
 
-  attr_reader :page_visit_class, :page_visits
+  attr_reader :page_visit_class
 
   def new_sorts
     SORT_CLASSES.map(&:new)
