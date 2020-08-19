@@ -28,7 +28,7 @@ The plan is to validate user input via the command line, read from the log file,
 
 3. Wrote the runnable script as the feature spec specified -> showed that next step is to implement the sort logic. I plan to subclass off a base sort class.
 
-4. Wrote an integration test to cover the log actually working as intented.
+4. Wrote an integration test to cover the log actually working as intended.
 
 5. Implemented the sorts with an injected presenter.
 

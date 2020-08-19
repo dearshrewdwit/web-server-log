@@ -13,7 +13,6 @@ class Log
     File.open(file_path, 'r') do |file|
       file.each_line do |line|
         page_visit = page_visit_class.new(line.chomp)
-        page_visits << page_visit
 
         sorts.each do |sort|
           sort.process(page_visit)

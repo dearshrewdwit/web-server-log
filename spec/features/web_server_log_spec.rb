@@ -1,7 +1,9 @@
 require 'app'
 
 RSpec.describe 'running command' do
-  let(:log_file_path) { 'webserver.log' }
+  let(:log_file_path) { 'spec/support/full-example.log' }
+  let(:txt_file_path) { 'spec/support/incorrect-type.txt' }
+
   let(:expected) do
     "Total visits\n"\
     "	/about/2 90 total visits\n"\
@@ -36,6 +38,6 @@ RSpec.describe 'running command' do
   end
 
   it 'raises error when file is not a log' do
-    expect { system("bin/sort-logs webserver.txt") }.to output("IncorrectFileTypeError\n").to_stdout_from_any_process
+    expect { system("bin/sort-logs #{txt_file_path}") }.to output("IncorrectFileTypeError\n").to_stdout_from_any_process
   end
 end
