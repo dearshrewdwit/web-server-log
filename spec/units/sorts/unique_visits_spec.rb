@@ -6,7 +6,6 @@ RSpec.describe Sorts::UniqueVisits do
   let(:page_visit3) { double(path: '/home', ip_address: '722.247.931.582') }
   let(:page_visit4) { double(path: '/home', ip_address: '184.123.665.067') }
 
-
   subject(:sort) { described_class.new }
 
   it 'can aggregate and order highest first unique page visits' do

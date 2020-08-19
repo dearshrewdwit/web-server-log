@@ -9,6 +9,6 @@ begin
   file_path = sort_command.file_path
   log = Log.new
   log.sort(file_path: file_path)
-rescue WebServerLogError => error
-  puts error.message
+rescue WebServerLogError => e
+  puts e.message
 end

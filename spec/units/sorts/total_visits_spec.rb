@@ -14,6 +14,6 @@ RSpec.describe Sorts::TotalVisits do
   it 'can order highest first aggregated different pages' do
     sort.process(page_visit)
     2.times { sort.process(page_visit2) }
-    expect(sort.summary).to eq [[page_visit2.path, 2],[page_visit.path, 1]]
+    expect(sort.summary).to eq [[page_visit2.path, 2], [page_visit.path, 1]]
   end
 end

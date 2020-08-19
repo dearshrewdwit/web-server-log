@@ -32,4 +32,12 @@ The plan is to validate user input via the command line, read from the log file,
 
 5. Implemented the sorts with an injected presenter.
 
-6. Not currently a huge fan of how the presenter relies a lot on knowing specifically how a summary should look eg: 2d array format for the sort summary => I'd probably improve this next.
+6. Not currently a huge fan of how the presenter relies a lot on knowing specifically how a summary should look eg: 2d array format for the sort summary => I'd probably improve this next, and wrap the data in an object to pass around like PageVisit, eg: SummmaryLine.
+
+7. Not a fan of the current file type validation => I'd improve this with a pattern match.
+
+8. I might be tempted to DRY out the sort tests with RSpec's shared examples.
+
+9. There's currently no validation of the log file format - it assumes a validly formatted file. It's possible to use PageVisit to validate itself at some point.
+
+10. I might extract the summary outputs as fixtures to load them from there in the specs to help dry the tests out.

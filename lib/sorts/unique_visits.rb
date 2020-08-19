@@ -13,7 +13,7 @@ module Sorts
       result = counter.map.with_object({}) do |(path, ip_address_count), unique_visits|
         unique_visits[path] = ip_address_count.length
       end
-      result.sort_by { |path, count| count}.reverse
+      result.sort_by { |_path, count| count }.reverse
     end
   end
 end

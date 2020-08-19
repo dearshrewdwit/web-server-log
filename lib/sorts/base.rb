@@ -6,7 +6,7 @@ module Sorts
       @counter = {}
     end
 
-    def process(page_visit)
+    def process(_page_visit)
       raise 'implement me in a subclass'
     end
 

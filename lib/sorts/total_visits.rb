@@ -13,7 +13,7 @@ module Sorts
     end
 
     def summary
-      counter.sort_by { |path, count| count}.reverse
+      counter.sort_by { |_path, count| count }.reverse
     end
   end
 end

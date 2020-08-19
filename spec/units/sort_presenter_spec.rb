@@ -10,7 +10,7 @@ end
 
 RSpec.describe SortPresenter do
 
-  subject(:sort_presenter) { described_class}
+  subject(:sort_presenter) { described_class }
   let(:expected) do
     "Sort mock\n"\
     "\ttest 1 sort mock\n"\
