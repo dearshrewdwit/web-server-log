@@ -4,17 +4,18 @@ class Log
     Sorts::UniqueVisits
   ]
 
-  def initialize(page_visit_class: PageVisit)
-    @page_visit_class = page_visit_class
+  def initialize(file_path:, line_parser_class: PageVisit)
+    @file_path = file_path
+    @line_parser_class = line_parser_class
   end
 
-  def sort(file_path:, sorts: new_sorts)
+  def sort(sorts: new_sorts)
     File.open(file_path, 'r') do |file|
       file.each_line do |line|
-        page_visit = page_visit_class.new(line.chomp)
+        parsed_line = line_parser_class.new(line.chomp)
 
         sorts.each do |sort|
-          sort.process(page_visit)
+          sort.process(parsed_line)
         end
       end
     end
@@ -24,7 +25,7 @@ class Log
 
   private
 
-  attr_reader :page_visit_class
+  attr_reader :line_parser_class, :file_path
 
   def new_sorts
     SORT_CLASSES.map(&:new)

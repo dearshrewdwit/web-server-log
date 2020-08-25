@@ -22,11 +22,11 @@ RSpec.describe "Log Integration" do
     "	/contact 1 unique visits\n"
   end
   let(:file_path) { 'spec/support/fixtures/short-example.log' }
-  subject(:log) { Log.new }
+  subject(:log) { Log.new(file_path: file_path) }
 
   describe '#sort' do
     it 'outputs correctly' do
-      expect { log.sort(file_path: file_path) }.to output(expected).to_stdout
+      expect { log.sort }.to output(expected).to_stdout
     end
   end
 end

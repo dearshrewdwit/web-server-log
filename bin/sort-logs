@@ -7,8 +7,8 @@ sort_command = SortCommand.new(*ARGV)
 begin
   sort_command.validate!
   file_path = sort_command.file_path
-  log = Log.new
-  log.sort(file_path: file_path)
+  log = Log.new(file_path: file_path)
+  log.sort
 rescue WebServerLogError => e
   puts e.message
 end
