@@ -10,8 +10,8 @@ module Sorts
     end
 
     def summary
-      result = counter.map.with_object({}) do |(path, ip_address_count), unique_visits|
-        unique_visits[path] = ip_address_count.length
+      result = counter.map.with_object({}) do |(path, ip_addrs), uniq_visits|
+        uniq_visits[path] = ip_addrs.length
       end
       result.sort_by { |_path, count| count }.reverse
     end

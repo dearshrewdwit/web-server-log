@@ -23,6 +23,10 @@ class SortCommand
 
   def validate_file_path
     raise FileNotFoundError unless File.exist?(file_path)
-    raise IncorrectFileTypeError unless ACCEPTED_FILE_TYPES.include?(file_path[-4..-1])
+    raise IncorrectFileTypeError unless accepted_file_type?
+  end
+
+  def accepted_file_type?
+    ACCEPTED_FILE_TYPES.include?(file_path[-4..-1])
   end
 end
