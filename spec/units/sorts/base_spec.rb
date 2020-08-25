@@ -18,4 +18,8 @@ RSpec.describe Sorts::Base do
   it 'uses a presenter to print a summary' do
     expect(base.print_summary(presenter: presenter_class)).to eq 'a summary'
   end
+
+  it 'has a NAME' do
+    expect(base.name).to eq described_class::NAME
+  end
 end

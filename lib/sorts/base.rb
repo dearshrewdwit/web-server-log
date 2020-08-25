@@ -18,6 +18,10 @@ module Sorts
       presenter.generate_from(self)
     end
 
+    def name
+      self.class::NAME
+    end
+
     private
 
     attr_reader :counter

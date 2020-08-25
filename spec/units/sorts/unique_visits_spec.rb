@@ -22,4 +22,8 @@ RSpec.describe Sorts::UniqueVisits do
     sort.process(page_visit2)
     expect(sort.summary).to eq [[page_visit.path, 1]]
   end
+
+  it 'has a NAME' do
+    expect(sort.name).to eq described_class::NAME
+  end
 end
