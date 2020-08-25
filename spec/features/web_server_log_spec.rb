@@ -1,8 +1,8 @@
 require 'app'
 
 RSpec.describe 'running command' do
-  let(:log_file_path) { 'spec/support/full-example.log' }
-  let(:txt_file_path) { 'spec/support/incorrect-type.txt' }
+  let(:log_file_path) { 'spec/support/fixtures/full-example.log' }
+  let(:txt_file_path) { 'spec/support/fixtures/incorrect-type.txt' }
 
   let(:expected) do
     "Total visits\n"\

@@ -21,7 +21,7 @@ RSpec.describe "Log Integration" do
     "	/home 1 unique visits\n"\
     "	/contact 1 unique visits\n"
   end
-  let(:file_path) { 'spec/support/short-example.log' }
+  let(:file_path) { 'spec/support/fixtures/short-example.log' }
   subject(:log) { Log.new }
 
   describe '#sort' do

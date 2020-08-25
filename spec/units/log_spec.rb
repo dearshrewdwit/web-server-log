@@ -1,9 +1,7 @@
-require 'sorts/total_visits'
-require 'sorts/unique_visits'
 require 'log'
 
 RSpec.describe Log do
-  let(:file_path) { 'spec/support/short-example.log' }
+  let(:file_path) { 'spec/support/fixtures/short-example.log' }
   let(:test_sort) { double(process: nil, print_summary: 'summary') }
   let(:page_visit) { double('pv instance') }
   let(:page_visit_class) { double('pv class', new: page_visit) }

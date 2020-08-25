@@ -6,7 +6,7 @@ RSpec.describe SortCommand do
     subject(:command) { described_class.new(*args) }
 
     context 'is valid' do
-      let(:args) { ['spec/support/full-example.log'] }
+      let(:args) { ['spec/support/fixtures/full-example.log'] }
 
       it 'does not raise error' do
         expect { command.validate! }.not_to raise_error
@@ -38,7 +38,7 @@ RSpec.describe SortCommand do
     end
 
     context 'when file is not a log' do
-      let(:args) { ['spec/support/incorrect-type.txt'] }
+      let(:args) { ['spec/support/fixtures/incorrect-type.txt'] }
 
       it 'raises error when file is not a log' do
         expect { command.validate! }.to raise_error IncorrectFileTypeError
