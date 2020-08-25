@@ -27,6 +27,10 @@ class SortCommand
   end
 
   def accepted_file_type?
-    ACCEPTED_FILE_TYPES.include?(file_path[-4..-1])
+    ACCEPTED_FILE_TYPES.include?(file_extension)
+  end
+
+  def file_extension
+    File.extname(file_path)
   end
 end
